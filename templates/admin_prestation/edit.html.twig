@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier les prestations{% endblock %}
+
+{% block body %}
+    <h1>Modifier les prestations</h1>
+
+   
+
+    <a class='btn btn-warning' href="{{ path('app_admin_prestation') }}">back to list</a>
+ {{ include('admin_prestation/_form.html.twig', {'button_label': 'Update'}) }}
+{% endblock %}

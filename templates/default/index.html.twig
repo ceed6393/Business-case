@@ -1,0 +1,195 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+
+
+{% block body %}
+
+
+<div class="example-wrapper">
+
+<nav class="navbar navbar-expand-lg d-flex justify-content-center">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img class="logo d-flex justify-content-center" src="{{asset('uploads/images/logo.png')}}" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('app_admin_prestation')}}">Prestations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('app_admin_product')}}">Nos produits</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('app_admin_order')}}">Commandes</a>
+            </li>
+           
+            
+          <div class="container icon">
+          {% if app.user %}
+    <h1>Bonjour {{app.user.nom|upper}} {{app.user.prenom}}</h1>
+<a href="{{ path('app_logout')}}">Se déconnecter</a>
+<a href="{{ path('app_login')}}">Accéder à mon compte</a>
+
+{% else %}
+<a href="{{ path('app_register')}}">Créer un nouveau compte</a>
+<a href="{{ path('app_login')}}">se connecter</a>
+{% endif %}
+            <img src="{{asset('uploads/images/user-solid.svg')}}" />
+            <img src="{{asset('uploads/images/basket-solid.svg')}}" />
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+    <section class="newsletter">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2>Bienvenue chez MoussTâche !</h2>
+          </div>
+        </div>
+      </div>
+      <div class="container box">
+        <div class="row">
+          <div class="col-12 text-center">
+            <p>
+              <strong
+                >Situé à Clermont-Ferrand dans le département du Puy-de-Dôme,
+                Inter Pressing vous accueille pour tous travaux de laverie et de
+                blanchisserie.Un travail minutieux et soigné afin de garder la
+                qualité de votre linge (de maison ou vêtements). Un service
+                retouches de vêtements vous est aussi suggéré pour la reprise de
+                taille de vêtements, la rectification de fermeture éclair ou
+                d'ourlets .</strong
+              >
+            </p>
+            <a href="a"><span></span>Inscrivez-vous à notre newsletter</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="carousel">
+      <div class="container d-flex justify-content-center">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="gallery">
+              <img src="{{asset('uploads/images/robe.jpg')}}" alt="robe" />
+              <img src="{{asset('uploads/images/pressing.jpg')}}" alt="pressing" />
+              <img src="{{asset('uploads/images/costume.jpg')}}" alt="costume" />
+              <img src="{{asset('uploads/images/pressing1.jpg')}}" alt="pressing1" />
+              <img src="{{asset('uploads/images/repassage.jpg')}}" alt="repassage" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="prestationh2">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <h2>Nos prestations</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="prestation">
+      <div class="container">
+        <div class="row">
+          <div class="linge col-sm-4">
+            <button "#"><a class="nav-link" href="{{ path('app_admin_category_index')}}">Catégories</a></button>
+          </div>
+          <div class="fer col-sm-4">
+            <button href="#"><span></span>Repassage</button>
+          </div>
+            <div class="couture col-sm-4">
+            <button href="#"><span></span>Couture</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+<div class="sticky">
+      <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+      </div>
+    </div>
+   
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+  <footer>
+    
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2 col-sm-4">
+            <img src="{{asset('uploads/images/logo.png')}}" class="img-fluid logo" />
+          </div>
+          <div class="col-md-2 col-sm-4">
+            <b>Nos produits</b>
+            <ul>
+              <li><a href="#">Pantalons</a></li>
+              <li><a href="#">Chemises </a></li>
+              <li><a href="#">Vestes</a></li>
+              <li><a href="#">Chaussures</a></li>
+              <li><a href="#">Sous-Vêtements</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2 col-sm-4">
+            <b>Informations</b>
+            <ul>
+              <li><a href="#">Livraison</a></li>
+              <li><a href="#">Engagement qualité</a></li>
+              <li><a href="#">Espace Entreprise</a></li>
+              <li><a href="#">Contactez-nous</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-12 col-md-6">
+      
+
+            <p>
+              <b>La MoussTâche Boutique - Clermont-Ferrand</b> 222, Boulevard Lafayette 63000
+              Clermont-Ferrand - FRANCE<br />
+              Tél :<a href="tel:0425653515">+33 (0)4 25 65 35 15</a> |
+              <a href="mail:mousstâche@lamousstâcheboutique.com"
+                >mousstâche@lamousstâcheboutique.com</a
+              >
+            </p>
+          
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produits{% endblock %}
+
+{% block body %}
+    <h1>Produits</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ product.id }}</td>
+            </tr>
+              <tr>
+                <th>nom</th>
+                <td>{{ product.nom }}</td>
+            </tr>
+              <tr>
+                <th>description</th>
+                <td>{{ product.description }}</td>
+            </tr>
+            <tr>
+                <th>etat</th>
+                <td><img src="{{ asset('uploads/images/'~product.photo) }}"></td>
+            </tr>
+            <th>Libelle</th>
+                <td>{{ product.etat }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_product') }}">back to list</a>
+
+    <a href="{{ path('app_admin_product_edit', {'id': product.id}) }}">edit</a>
+{% endblock %}

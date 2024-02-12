@@ -1,0 +1,42 @@
+{% extends './base.html.twig' %}
+
+{% block title %}prestation{% endblock %}
+
+{% block body %}
+    <h1>Nos prestations</h1>
+
+    <table class="table">
+        <thead><table>
+            <tr>
+                <th class="bg-primary" style="width: 5em;">Id</th>
+                <th class="bg-success" style="width: 8em;">libelle</th>
+                <th class="bg-warning" style="width: 8em;">description</th>
+                                <th class="bg-danger" style="width: 18em;">prix</th>
+
+            </tr>
+        </thead>
+        <tbody>
+         {% for prestations in prestation %}
+        <tr>     
+       <td class="bg-primary " style="width: 5em;">{{ prestations.id }}</td>
+  <td class="bg-success mt-" style="width: 8em;">{{ prestations.libelle }}</td>
+  <td class="bg-warning" style="width: 18em;">{{ prestations.description }}</td>
+  <td class="bg-danger" style="width: 18em;">{{ prestations.prix }}€</td>
+   <td>
+                    <a class='btn btn-info' href="{{ path('app_admin_prestation_show', {'id': prestations.id}) }}">Détail</a>
+                    <a class='btn btn-warning' href="{{ path('app_admin_prestation_edit', {'id': prestations.id}) }}">Modifier</a>
+                    <a class='btn btn-danger' href="{{ path('app_admin_prestation_delete', {'id': prestations.id}) }}">Supprimer</a>
+                </td>
+     </tr>
+
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a class='btn btn-warning' href="{{ path('app_default') }}">back to list</a>
+
+    <a class='btn btn-success' href="{{ path('app_admin_prestation_new') }}">Create new</a>
+{% endblock %}

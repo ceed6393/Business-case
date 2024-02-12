@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos produits{% endblock %}
+
+{% block body %}
+    <h1>Nos produits</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>récapitulatif</th>
+                <th>total</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in product %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.récapitulatif }}</td>
+                <td>{{ product.total }}</td>
+                <td>{{ product.libelle }}</td>
+                <td>
+                    <a href="{{ path('app_admin_order_show', {'id': order.id}) }}">show</a>
+                    <a href="{{ path('app_admin_order_edit', {'id': order.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_order_new') }}">Create new</a>
+{% endblock %}

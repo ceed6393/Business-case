@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier les Commandes{% endblock %}
+
+{% block body %}
+    <h1>Modifier les Commandes</h1>
+
+   
+
+    <a class='btn btn-warning' href="{{ path('app_admin_order') }}">back to list</a>
+ {{ include('admin_order/_form.html.twig', {'button_label': 'Update'}) }}
+{% endblock %}

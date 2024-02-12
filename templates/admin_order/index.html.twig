@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commandes{% endblock %}
+
+{% block body %}
+    <h1>Nos Commandes</h1>
+
+    <table class="table">
+        <thead><table>
+            <tr>
+                <th class="bg-primary" style="width: 5em;">Id</th>
+                <th class="bg-success" style="width: 8em;">libelle</th>
+                <th class="bg-warning" style="width: 8em;">description</th>
+                                <th class="bg-danger" style="width: 18em;">prix</th>
+
+            </tr>
+        </thead>
+        <tbody>
+         {% for order in orders %}
+        <tr>     
+       <td class="bg-primary " style="width: 5em;">{{ order.id }}</td>
+  <td class="bg-success mt-" style="width: 8em;">{{ order.recapitulatif }}</td>
+  <td class="bg-warning" style="width: 18em;">{{ order.total }}</td>
+  <td class="bg-danger" style="width: 18em;">{{ order.libelle }}€</td>
+   <td>
+                    <a class='btn btn-info' href="{{ path('app_admin_order_show', {'id': order.id}) }}">Détail</a>
+                    <a class='btn btn-warning' href="{{ path('app_admin_order_edit', {'id': order.id}) }}">Modifier</a>
+                    <a class='btn btn-danger' href="{{ path('app_admin_order_delete', {'id': order.id}) }}">Supprimer</a>
+                </td>
+     </tr>
+
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a class='btn btn-warning' href="{{ path('app_default') }}">back to list</a>
+
+    <a class='btn btn-success' href="{{ path('app_admin_order_new') }}">Create new</a>
+{% endblock %}
