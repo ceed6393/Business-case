@@ -41,15 +41,14 @@
           <div class="container icon">
           {% if app.user %}
     <h1>Bonjour {{app.user.nom|upper}} {{app.user.prenom}}</h1>
-<a href="{{ path('app_logout')}}">Se déconnecter</a>
-<a href="{{ path('app_login')}}">Accéder à mon compte</a>
+<a class="icon" href="{{ path('app_logout')}}"><i class="fa-solid fa-power-off"></i></a>
+<a class="icon" href="{{ path('app_login')}}"><i class="fa-solid fa-user"></i></a>
 
 {% else %}
 <a href="{{ path('app_register')}}">Créer un nouveau compte</a>
-<a href="{{ path('app_login')}}">se connecter</a>
+<a class="icon" href="{{ path('app_login')}}"><i class="fa-solid fa-right-to-bracket"></i></a>
 {% endif %}
-            <img src="{{asset('uploads/images/user-solid.svg')}}" />
-            <img src="{{asset('uploads/images/basket-solid.svg')}}" />
+           
           </div>
         </div>
       </div>
@@ -110,14 +109,14 @@
     <section class="prestation">
       <div class="container">
         <div class="row">
-          <div class="linge col-sm-4">
-            <button "#"><a class="nav-link" href="{{ path('app_admin_category_index')}}">Catégories</a></button>
+          <div class="bloc1 col-sm-4">
+            <button "#"><a class="nav-link" href="{{ path('app_admin_category_index')}}">Devis</a></button>
           </div>
-          <div class="fer col-sm-4">
-            <button href="#"><span></span>Repassage</button>
+          <div class="bloc2 col-sm-4">
+            <button "#"><a class="nav-link" href="{{ path('app_admin_category_index')}}">Rendez-vous</a></button>
           </div>
-            <div class="couture col-sm-4">
-            <button href="#"><span></span>Couture</button>
+            <div class="bloc3 col-sm-4">
+            <button "#"><a class="nav-link" href="{{ path('app_admin_category_index')}}">Articles</a></button>
           </div>
         </div>
       </div>
@@ -143,6 +142,8 @@
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"
     ></script>
+            <script src="https://kit.fontawesome.com/a4ed77486c.js" crossorigin="anonymous"></script>
+
   </body>
   <footer>
     
